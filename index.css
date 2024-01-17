@@ -32,6 +32,17 @@ input {
     margin: 10px 0;
 }
 
+/* To make sure the placeholder text is removed when typing in Chrome and safari */
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+/* To make sure the placeholder text is removed when typing in firefox */
+input:focus::-moz-placeholder {
+    opacity: 0;
+}
+
+
 button {
     color: #FDFDFD;
      /* background-color: #102C57;   */

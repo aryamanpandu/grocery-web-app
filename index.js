@@ -1,3 +1,4 @@
+
 // Imports the important functions to use from firebase for the database to work properly
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
@@ -22,7 +23,6 @@ const toggleThemeBtnEl = document.getElementById("toggle-theme-btn");
 // and clears the input button so that the user does not have to clear it themselves
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value;
-    
     push(shoppingListInDB, inputValue);
     
     clearInputFieldEl();
