@@ -16,6 +16,7 @@ const shoppingListInDB = ref(database, "shoppingList");
 const inputFieldEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-button");
 const shoppingListEl = document.getElementById("shopping-list");
+const errorMessageEl = document.getElementById("error-msg");
 
 const toggleThemeBtnEl = document.getElementById("toggle-theme-btn");
 
@@ -23,7 +24,20 @@ const toggleThemeBtnEl = document.getElementById("toggle-theme-btn");
 // and clears the input button so that the user does not have to clear it themselves
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value;
-    push(shoppingListInDB, inputValue);
+    
+    if (inputValue !== "") {
+        push(shoppingListInDB, inputValue);
+        //Reset the error message if it was set before
+        errorMessageEl.innerText = "";
+        errorMessageEl.className = "";
+    }
+    else {
+        // If the user presses the Add to Cart button without adding any grocery item then add error 
+        errorMessageEl.innerText = "Please enter a grocery item before pressing add";
+        errorMessageEl.className = "error-msg";
+        
+    }
+    
     
     clearInputFieldEl();
 })

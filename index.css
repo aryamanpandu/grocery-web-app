@@ -14,6 +14,15 @@ html, body {
     margin: 30px auto;
 }
 
+.error-msg {
+    color: #cc0000;
+    border: 2px solid #cc0000;
+    padding: 20px 50px;
+    border-radius: 8px;
+    background-color: var(--color-input-li);
+    font-weight: bold;
+}
+
 img {
     width: 150px;
     margin: 0 auto;
